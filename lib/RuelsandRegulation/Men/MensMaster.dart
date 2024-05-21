@@ -11,8 +11,13 @@ class _MensMasterState extends State<MensMaster> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Men\'s Master Judging and Finals'),
-        backgroundColor: const Color.fromARGB(255, 255, 197, 22),
+        title: Text('Men\'s Master Judging and Finals',
+        style: TextStyle(
+          fontWeight: FontWeight.bold,
+        ),),
+                centerTitle: true,
+
+        backgroundColor: Colors.white10,
         leading: IconButton(
           icon: Icon(Icons.arrow_back),
           onPressed: () {

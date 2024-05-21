@@ -30,15 +30,15 @@ class Gallery extends StatelessWidget {
         title: const Text(
           'Gallery',
           style: TextStyle(
-            color: Colors.white,
+            color: Colors.black,
             fontWeight: FontWeight.bold,
           ),
         ),
         centerTitle: true,
-        backgroundColor: const Color.fromARGB(255, 255, 197, 22),
+        backgroundColor: Colors.white10,
         leading: IconButton(
           icon: const Icon(Icons.arrow_back),
-          color: Colors.white,
+          color: Colors.black,
           onPressed: () {
             Navigator.pushReplacement(
               context,
