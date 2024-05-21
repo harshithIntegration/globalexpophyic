@@ -729,7 +729,7 @@ class AboutUsPage extends StatelessWidget {
                           _buildCard('assets/himadri.jpeg',
                               "HIMADRI ADHIKARI\nVC.PRESIDENT KARNATKA"),
                           _buildCard('assets/jagjit.jpg',
-                              "JAGJIT SINGH\nUIBFF PRESIDENT               "),
+                              "JAGJIT SINGH\nUIBFF PRESIDENT"),
                           _buildCard('assets/nitesh.jpeg',
                               "NITESH CHHIBBER\nUIBFF PRESIDENT INDIA        "),
                           _buildCard('assets/andre.jpg',
