@@ -217,7 +217,7 @@ class _WomensPhysiqueState extends State<WomensPhysique> {
                       const SizedBox(height: 8),
                       const Text(
                         '© Copyright 2024 All Rights Reserved by Planotech Groups',
-                        style: TextStyle(fontSize: 12),
+                        style: TextStyle(fontSize: 10),
                       ),
                     ],
                   ),

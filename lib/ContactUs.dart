@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:globalphysiqueexpo/Dashboard.dart';
-import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class ContactPage extends StatefulWidget {
   @override
@@ -10,12 +9,8 @@ class ContactPage extends StatefulWidget {
 
 class _ContactPageState extends State<ContactPage>
     with TickerProviderStateMixin {
-  final _formKey = GlobalKey<FormState>();
   late AnimationController _controller;
-  late GoogleMapController _mapController;
 
-  static const LatLng _officeLocation =
-      LatLng(13.0983657, 77.5378028); // Coordinates for your office location
 
   @override
   void initState() {
@@ -68,7 +63,7 @@ class _ContactPageState extends State<ContactPage>
         ),
         child: SingleChildScrollView(
           child: Padding(
-            padding: EdgeInsets.all(10.0),
+            padding: const EdgeInsets.all(10.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -79,7 +74,7 @@ class _ContactPageState extends State<ContactPage>
                     fit: BoxFit.cover,
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 15,
                 ),
                 const Center(
@@ -92,7 +87,7 @@ class _ContactPageState extends State<ContactPage>
                     ),
                   ),
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 AnimationLimiter(
                   child: Column(
                     children: AnimationConfiguration.toStaggeredList(
@@ -110,19 +105,19 @@ class _ContactPageState extends State<ContactPage>
                           content:
                               '#49 Ravish Gardenia Layout\nVaderahalli, Bengaluru, Karnataka 560097',
                         ),
-                        SizedBox(height: 20),
+                        const SizedBox(height: 20),
                         buildContactCard(
                           icon: Icons.phone,
                           title: 'Call Us',
-                          content: '+91 7899828061\n+91 9513422252',
+                          content: '+91 9606445499',
                         ),
-                        SizedBox(height: 20),
+                        const SizedBox(height: 20),
                         buildContactCard(
                           icon: Icons.email,
                           title: 'Mail Us',
-                          content: 'Support@example.com',
+                          content: 'info@globalphysiqueexpo.com',
                         ),
-                        SizedBox(height: 20),
+                        const SizedBox(height: 20),
                         buildContactCard(
                           icon: Icons.access_time,
                           title: 'Opening Time',
@@ -133,130 +128,6 @@ class _ContactPageState extends State<ContactPage>
                   ),
                 ),
                 const SizedBox(height: 40),
-                const Center(
-                  child: Text(
-                    '➤  Message Us :',
-                    style: TextStyle(
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black,
-                    ),
-                  ),
-                ),
-                const SizedBox(height: 20),
-                SlideTransition(
-                  position: Tween<Offset>(
-                    begin: const Offset(1.0, 0.0),
-                    end: Offset.zero,
-                  ).animate(CurvedAnimation(
-                    parent: _controller,
-                    curve: Curves.easeInOut,
-                  )),
-                  child: Form(
-                    key: _formKey,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        CustomTextField(
-                          label: 'Name',
-                          icon: Icons.person,
-                          keyboardType: TextInputType.name,
-                        ),
-                        SizedBox(height: 20),
-                        CustomTextField(
-                          label: 'Phone No',
-                          icon: Icons.phone,
-                          keyboardType: TextInputType.phone,
-                        ),
-                        SizedBox(height: 20),
-                        CustomTextField(
-                          label: 'Email',
-                          icon: Icons.email,
-                          keyboardType: TextInputType.emailAddress,
-                        ),
-                        SizedBox(height: 20),
-                        CustomTextField(
-                          label: 'Subject',
-                          icon: Icons.subject,
-                          keyboardType: TextInputType.text,
-                        ),
-                        SizedBox(height: 20),
-                        CustomTextField(
-                          label: 'Message',
-                          icon: Icons.message,
-                          keyboardType: TextInputType.multiline,
-                          maxLines: 7,
-                        ),
-                        SizedBox(height: 30),
-                        Center(
-                          child: OutlinedButton(
-                            onPressed: () {
-                              if (_formKey.currentState!.validate()) {
-                                // Process data
-                              }
-                            },
-                            style: OutlinedButton.styleFrom(
-                              padding: const EdgeInsets.symmetric(
-                                horizontal: 40,
-                                vertical: 15,
-                              ),
-                              backgroundColor: Colors.blue,
-                              side: BorderSide(color: Colors.blue, width: 2),
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(10),
-                              ),
-                            ),
-                            child: const Text(
-                              'Submit Now',
-                              style: TextStyle(
-                                fontSize: 18,
-                                color: Colors.white,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-                SizedBox(height: 40),
-                const Center(
-                  child: Text(
-                    '➤  Find Us Here :',
-                    style: TextStyle(
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black,
-                    ),
-                  ),
-                ),
-                const SizedBox(height: 20),
-                Container(
-                  height: 300,
-                  child: GoogleMap(
-                    onMapCreated: (controller) {
-                      _mapController = controller;
-                      WidgetsBinding.instance.addPostFrameCallback((_) {
-                        _mapController.showMarkerInfoWindow(MarkerId('office'));
-                      });
-                    },
-                    initialCameraPosition: const CameraPosition(
-                      target: _officeLocation,
-                      zoom: 19,
-                    ),
-                    markers: {
-                      const Marker(
-                        markerId: MarkerId('office'),
-                        position: _officeLocation,
-                        infoWindow: InfoWindow(
-                          title: 'Planotech group of companies',
-                          snippet: 'Directions',
-                        ),
-                      ),
-                    },
-                  ),
-                ),
-                SizedBox(height: 40),
                 buildFooter(),
                 Padding(
                   padding: const EdgeInsets.all(16.0),
@@ -270,7 +141,7 @@ class _ContactPageState extends State<ContactPage>
                       const SizedBox(height: 8),
                       const Text(
                         '© Copyright 2024 All Rights Reserved by Planotech Groups',
-                        style: TextStyle(fontSize: 13),
+                        style: TextStyle(fontSize: 10),
                       ),
                     ],
                   ),
@@ -333,7 +204,7 @@ class _ContactPageState extends State<ContactPage>
   Widget buildFooter() {
     return Container(
       color: Colors.blue[50],
-      padding: EdgeInsets.all(10.0),
+      padding: const EdgeInsets.all(10.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -399,7 +270,7 @@ class _ContactPageState extends State<ContactPage>
             children: [
               Icon(Icons.phone_in_talk_outlined, size: 15),
               SizedBox(width: 8),
-              Text('+91 9606445493'),
+              Text('+91 9606445499'),
             ],
           ),
           const SizedBox(height: 8),
