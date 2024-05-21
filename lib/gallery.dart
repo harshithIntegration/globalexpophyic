@@ -17,7 +17,7 @@ class Gallery extends StatelessWidget {
       'assets/gym5.jpg',
       'assets/gym6.jpg',
       'assets/gym12.jpg',
-      'assets/gym7.jpg',
+      'assets/gym7.jpg', 
       'assets/gym8.jpg',
       'assets/gym9.jpg',
       'assets/gym13.jpg',
