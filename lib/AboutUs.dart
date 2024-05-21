@@ -483,7 +483,7 @@ class AboutUsPage extends StatelessWidget {
                   const SizedBox(height: 8),
                   const Text(
                     '© Copyright 2024 All Rights Reserved by Planotech Groups',
-                    style: TextStyle(fontSize: 13),
+                    style: TextStyle(fontSize: 10),
                   ),
                 ],
               ),
@@ -566,7 +566,7 @@ Widget buildFooter() {
           children: [
             Icon(Icons.phone_in_talk_outlined, size: 15),
             SizedBox(width: 8),
-            Text('+91 9606445493'),
+            Text('+91 9606445499'),
           ],
         ),
         const SizedBox(height: 8),

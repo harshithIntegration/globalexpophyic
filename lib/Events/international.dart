@@ -60,6 +60,33 @@ class _InternationalScreenState extends State<International> {
                 ),
               ],
             ),
+            const Padding(
+                      padding: EdgeInsets.all(16.0),
+                      child: Text(
+                        'EVENTS',
+                        style: TextStyle(
+                            fontSize: 18, fontWeight: FontWeight.bold),
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+             const Padding(
+                      padding: EdgeInsets.all(16.0),
+                      child: Text(
+                        'We are UIBFF (United Intercontinental Bodybuilding Fitness Federation). UIBFF worldwide was started in 2017 and is now in taking applications around the globe to join our vission.',
+                        style: TextStyle(
+                            fontSize: 18, fontWeight: FontWeight.w400),
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                    const Padding(
+                      padding: EdgeInsets.all(16.0),
+                      child: Text(
+                        'The UIBFF is a “for the new breed athlete” strength federation.',
+                        style: TextStyle(
+                            fontSize: 18, fontWeight: FontWeight.w400),
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
             Padding(
               padding: const EdgeInsets.all(16.0),
               child: GridView.count(
@@ -92,7 +119,7 @@ class _InternationalScreenState extends State<International> {
                   const SizedBox(height: 8),
                   const Text(
                     '© Copyright 2024 All Rights Reserved by Planotech Groups',
-                    style: TextStyle(fontSize: 14),
+                    style: TextStyle(fontSize: 10),
                   ),
                 ],
               ),

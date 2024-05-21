@@ -161,7 +161,7 @@ class Gallery extends StatelessWidget {
                       const SizedBox(height: 8),
                       const Text(
                         '© Copyright 2024 All Rights Reserved by Planotech Groups',
-                        style: TextStyle(fontSize: 13),
+                        style: TextStyle(fontSize: 10),
                       ),
                     ],
                   ),

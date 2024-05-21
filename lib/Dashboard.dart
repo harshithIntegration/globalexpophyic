@@ -45,7 +45,7 @@ class DashboardPage extends StatefulWidget {
 
 class _DashboardPageState extends State<DashboardPage>
     with SingleTickerProviderStateMixin {
-  final DateTime targetDate = DateTime(2024, 11, 21);
+  final DateTime targetDate = DateTime(2024, 11, 23);
   late Duration remainingTime;
   late Timer timer;
   final advancedDrawerController = AdvancedDrawerController();
@@ -464,8 +464,7 @@ class _DashboardPageState extends State<DashboardPage>
             },
           ),
           backgroundColor: Colors.white,
-          foregroundColor: Colors.white,
-          centerTitle: true, // Set centerTitle to false
+          foregroundColor: Colors.white, // Set centerTitle to false
           titleSpacing: 0,
           title: Row(
             children: [
@@ -486,7 +485,7 @@ class _DashboardPageState extends State<DashboardPage>
                     color: Colors.black,
                   ),
                   overflow:
-                      TextOverflow.ellipsis, // Handle overflow by ellipsis
+                      TextOverflow.ellipsis, 
                 ),
               ),
             ],
@@ -503,14 +502,13 @@ class _DashboardPageState extends State<DashboardPage>
                     Stack(
                       children: [
                         Image.asset(
-                          'assets/final.jpg', // Path to your header image
+                          'assets/final.jpg', 
                           width: double.infinity,
                           height: 250,
                           fit: BoxFit.fill,
                         ),
                       ],
                     ),
-                    // Countdown timer in rounded square blocks
                     Padding(
                       padding: const EdgeInsets.all(16.0),
                       child: Row(
@@ -535,30 +533,6 @@ class _DashboardPageState extends State<DashboardPage>
                         ],
                       ),
                     ),
-                    // Register Now button
-                    Padding(
-                      padding: const EdgeInsets.symmetric(
-                          vertical: 16.0, horizontal: 16.0),
-                      child: Align(
-                        alignment: Alignment.centerLeft,
-                        child: ElevatedButton(
-                          onPressed: () {},
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.yellow,
-                            padding: const EdgeInsets.symmetric(
-                                horizontal: 16.0, vertical: 8.0),
-                            textStyle: const TextStyle(
-                                fontSize: 16, fontWeight: FontWeight.w400),
-                          ),
-                          child: const Text(
-                            'Register Now',
-                            style: TextStyle(
-                              color: Colors.black,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
                     Padding(
                       padding: const EdgeInsets.all(16.0),
                       child: AnimatedContainer(
@@ -568,7 +542,7 @@ class _DashboardPageState extends State<DashboardPage>
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
                           image: const DecorationImage(
-                            image: AssetImage('assets/body_logo.png'),
+                            image: AssetImage('assets/sa.png'),
                             fit: BoxFit.cover,
                           ),
                           border: Border.all(
@@ -865,7 +839,7 @@ class _DashboardPageState extends State<DashboardPage>
                           const SizedBox(height: 8),
                           const Text(
                             '© Copyright 2024 All Rights Reserved by Planotech Groups',
-                            style: TextStyle(fontSize: 14),
+                            style: TextStyle(fontSize: 10),
                           ),
                         ],
                       ),
@@ -887,8 +861,8 @@ Widget buildRoundedSquare(String value, String label, Color color) {
     child: CustomPaint(
       painter: RoundedSquarePainter(color),
       child: SizedBox(
-        width: 80,
-        height: 92,
+        width: 70,
+        height: 89,
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
