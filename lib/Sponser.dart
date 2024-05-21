@@ -600,6 +600,23 @@ class Sponser extends StatelessWidget {
                             ],
                           ),
                         ),
+                        Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: Column(
+                    children: [
+                      Image.asset(
+                        'assets/logo.png', // Path to your footer image
+                        width: 100,
+                        height: 100,
+                      ),
+                      const SizedBox(height: 8),
+                      const Text(
+                        '© Copyright 2024 All Rights Reserved by Planotech Groups',
+                        style: TextStyle(fontSize: 13),
+                      ),
+                    ],
+                  ),
+                ),
                       ]),
                 ),
               ],
