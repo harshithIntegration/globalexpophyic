@@ -11,8 +11,13 @@ class _MenPhysiqueState extends State<MenPhysique> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Men\'s Physique Judging and Finals'),
-        backgroundColor: const Color.fromARGB(255, 255, 197, 22),
+        title: const Text('Men\'s Physique Judging and Finals',
+        style: TextStyle(
+          fontWeight: FontWeight.bold,
+        ),),
+                centerTitle: true,
+
+        backgroundColor: Colors.white10,
         leading: IconButton(
           icon: const Icon(Icons.arrow_back),
           onPressed: () {

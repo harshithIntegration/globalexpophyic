@@ -35,7 +35,7 @@ class _SplashScreenState extends State<SplashScreen> {
               children: [
                 // Big logo
                 Image.asset(
-                  'assets/body_logo.png',
+                  'assets/logo.png',
                   height: 350,
                   width: 350,
                 ),

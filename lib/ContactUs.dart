@@ -41,14 +41,14 @@ class _ContactPageState extends State<ContactPage> with TickerProviderStateMixin
           style: TextStyle(
             fontSize: 24,
             fontWeight: FontWeight.bold,
-            color: Colors.white,
+            color: Colors.black,
           ),
         ),
         centerTitle: true,
-        backgroundColor: Color.fromARGB(255, 233, 216, 167),
+        backgroundColor: Colors.white10,
         leading: IconButton(
           icon: const Icon(Icons.arrow_back),
-          color: Colors.white,
+          color: Colors.black,
           onPressed: () {
             Navigator.pushReplacement(
                   context,

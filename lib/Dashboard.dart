@@ -3,8 +3,8 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter_advanced_drawer/flutter_advanced_drawer.dart';
 import 'dart:async';
 import 'package:globalphysiqueexpo/AboutUs.dart';
-import 'package:globalphysiqueexpo/Category/Mens.dart';
 import 'package:globalphysiqueexpo/Category/Womens.dart';
+import 'package:globalphysiqueexpo/Category/national.dart';
 import 'package:globalphysiqueexpo/ContactUs.dart';
 import 'package:globalphysiqueexpo/RuelsandRegulation/Men/ClassicPhysique.dart';
 import 'package:globalphysiqueexpo/RuelsandRegulation/Men/MenPhysique.dart';
@@ -12,6 +12,9 @@ import 'package:globalphysiqueexpo/RuelsandRegulation/Men/MensBodybuilding.dart'
 import 'package:globalphysiqueexpo/RuelsandRegulation/Men/MensHandicap.dart';
 import 'package:globalphysiqueexpo/RuelsandRegulation/Men/MensMaster.dart';
 import 'package:globalphysiqueexpo/RuelsandRegulation/Men/MensWheelchair.dart';
+import 'package:globalphysiqueexpo/RuelsandRegulation/Women/WomenBikini.dart';
+import 'package:globalphysiqueexpo/RuelsandRegulation/Women/WomensFitness.dart';
+import 'package:globalphysiqueexpo/RuelsandRegulation/Women/WomensPhysique.dart';
 import 'package:globalphysiqueexpo/Sponser.dart';
 import 'package:globalphysiqueexpo/gallery.dart';
 
@@ -111,17 +114,6 @@ class _DashboardPageState extends State<DashboardPage>
                 width: 300,
                 height: 100,
               ),
-              const Padding(
-                padding: EdgeInsets.all(16.0),
-                child: Text(
-                  'Global Physique Expo',
-                  style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.pinkAccent,
-                  ),
-                ),
-              ),
               const SizedBox(height: 20),
               ListTile(
                 title: Text(
@@ -146,9 +138,9 @@ class _DashboardPageState extends State<DashboardPage>
               ),
               ExpansionTile(
                 title: Text(
-                  'CATEGORIES',
+                  'EVENTS',
                   style: TextStyle(
-                    color: selectedItem == 'CATEGORIES'
+                    color: selectedItem == 'EVENTS'
                         ? Colors.black
                         : Colors.black,
                   ),
@@ -157,9 +149,9 @@ class _DashboardPageState extends State<DashboardPage>
                 children: [
                   ListTile(
                     title: Text(
-                      'Mens',
+                      'GALLERY',
                       style: TextStyle(
-                        color: selectedItem == 'Mens'
+                        color: selectedItem == 'GALLERY'
                             ? Colors.black
                             : Colors.black,
                         fontSize: 14,
@@ -167,19 +159,19 @@ class _DashboardPageState extends State<DashboardPage>
                     ),
                     onTap: () {
                       setState(() {
-                        selectedItem = 'Mens';
+                        selectedItem = 'GALLERY';
                       });
                       Navigator.pushReplacement(
                         context,
-                        MaterialPageRoute(builder: (context) => const Mens()),
+                        MaterialPageRoute(builder: (context) => const Gallery()),
                       );
                     },
                   ),
                   ListTile(
                     title: Text(
-                      'Womens',
+                      'NATIONAL',
                       style: TextStyle(
-                        color: selectedItem == 'Womens'
+                        color: selectedItem == 'NATIONAL'
                             ? Colors.black
                             : Colors.black,
                         fontSize: 14,
@@ -187,7 +179,27 @@ class _DashboardPageState extends State<DashboardPage>
                     ),
                     onTap: () {
                       setState(() {
-                        selectedItem = 'Womens';
+                        selectedItem = 'NATIONAL';
+                      });
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(builder: (context) =>  NationalScreen()),
+                      );
+                    },
+                  ),
+                  ListTile(
+                    title: Text(
+                      'INTERNATIONAL',
+                      style: TextStyle(
+                        color: selectedItem == 'INTERNATIONAL'
+                            ? Colors.black
+                            : Colors.black,
+                        fontSize: 14,
+                      ),
+                    ),
+                    onTap: () {
+                      setState(() {
+                        selectedItem = 'INTERNATIONAL';
                       });
                       Navigator.pushReplacement(
                         context,
@@ -219,9 +231,9 @@ class _DashboardPageState extends State<DashboardPage>
               ),
               ExpansionTile(
                 title: Text(
-                  'RULES & REGULATION',
+                  'RULES',
                   style: TextStyle(
-                    color: selectedItem == 'RULES & REGULATION'
+                    color: selectedItem == 'RULES'
                         ? Colors.black
                         : Colors.black,
                   ),
@@ -351,26 +363,67 @@ class _DashboardPageState extends State<DashboardPage>
                       );
                     },
                   ),
-                ],
-              ),
-              ListTile(
-                title: Text(
-                  'GALLERY',
-                  style: TextStyle(
-                    color:
-                        selectedItem == 'GALLERY' ? Colors.black : Colors.black,
+                  ListTile(
+                    title: Text(
+                      'Womens Bikini',
+                      style: TextStyle(
+                        color: selectedItem == 'Womens Bikini'
+                            ? Colors.black
+                            : Colors.black,
+                        fontSize: 14,
+                      ),
+                    ),
+                    onTap: () {
+                      setState(() {
+                        selectedItem = 'Womens Bikini';
+                      });
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(builder: (context) => WomenBikini()),
+                      );
+                    },
                   ),
-                ),
-                leading: const Icon(Icons.photo_library),
-                onTap: () {
-                  setState(() {
-                    selectedItem = 'GALLERY';
-                  });
-                  Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(builder: (context) => const Gallery()),
-                  );
-                },
+                  ListTile(
+                    title: Text(
+                      'Womens Fitness',
+                      style: TextStyle(
+                        color: selectedItem == 'Womens Fitness'
+                            ? Colors.black
+                            : Colors.black,
+                        fontSize: 14,
+                      ),
+                    ),
+                    onTap: () {
+                      setState(() {
+                        selectedItem = 'Womens Fitness';
+                      });
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(builder: (context) => WomensFitness()),
+                      );
+                    },
+                  ),
+                  ListTile(
+                    title: Text(
+                      'Women Physique',
+                      style: TextStyle(
+                        color: selectedItem == 'Womens Physique'
+                            ? Colors.black
+                            : Colors.black,
+                        fontSize: 14,
+                      ),
+                    ),
+                    onTap: () {
+                      setState(() {
+                        selectedItem = 'Womens Physique';
+                      });
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(builder: (context) => WomensPhysique()),
+                      );
+                    },
+                  ),
+                ],
               ),
               ListTile(
                 title: Text(
@@ -387,8 +440,7 @@ class _DashboardPageState extends State<DashboardPage>
                   });
                   Navigator.pushReplacement(
                     context,
-                    MaterialPageRoute(
-                        builder: (context) =>  ContactPage()),
+                    MaterialPageRoute(builder: (context) => ContactPage()),
                   );
                 },
               ),
@@ -571,64 +623,218 @@ class _DashboardPageState extends State<DashboardPage>
                       padding: const EdgeInsets.all(16.0),
                       child: Column(
                         children: [
-                          const Text(
-                            'Offcial Sponsors',
-                            style: TextStyle(
-                                fontSize: 22, fontWeight: FontWeight.bold),
+                          const SizedBox(height: 20),
+                          Container(
+                            padding: const EdgeInsets.all(3),
+                            child: const Text(
+                              '  OFFICIAL SPONSORS',
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 22,
+                                color: Color.fromARGB(255, 39, 38, 38),
+                              ),
+                            ),
                           ),
-                          const SizedBox(height: 10),
-                          const Text(
-                            'Supporting Partner',
-                            style: TextStyle(
-                                fontSize: 22, fontWeight: FontWeight.normal),
+                          const SizedBox(height: 15),
+                          Container(
+                            padding: const EdgeInsets.all(3),
+                            child: const Text(
+                              '➤  Supporting Sponsors',
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 20,
+                                color: Color.fromARGB(255, 39, 38, 38),
+                              ),
+                            ),
                           ),
-                          const SizedBox(height: 10),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-                              Image.asset('assets/sp2.png',
-                                  width: 100, height: 100),
-                              Image.asset('assets/sp4.png',
-                                  width: 100, height: 100),
-                              Image.asset('assets/sp5.png',
-                                  width: 100, height: 100),
-                            ],
+                          const SizedBox(height: 20),
+                          CarouselSlider(
+                            options: CarouselOptions(
+                              enlargeCenterPage: true,
+                              autoPlay: true,
+                              autoPlayInterval: const Duration(seconds: 3),
+                              autoPlayAnimationDuration:
+                                  const Duration(milliseconds: 800),
+                              enableInfiniteScroll: true,
+                              viewportFraction: 0.6,
+                              aspectRatio: 16 / 9,
+                              scrollDirection: Axis.horizontal,
+                            ),
+                            items: [
+                              'assets/supporting1.png',
+                              'assets/supporting2.jpg',
+                              'assets/supporting3.png',
+                              'assets/supporting4.jpg',
+                            ].map((item) {
+                              return Builder(
+                                builder: (BuildContext context) {
+                                  return Container(
+                                    width: MediaQuery.of(context).size.width,
+                                    margin: const EdgeInsets.symmetric(
+                                        horizontal: 5.0),
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(8.0),
+                                      image: DecorationImage(
+                                        image: AssetImage(item),
+                                        fit: BoxFit.cover,
+                                      ),
+                                    ),
+                                  );
+                                },
+                              );
+                            }).toList(),
                           ),
-                          const SizedBox(height: 10),
-                          const Text(
-                            'Platinum Sponsors',
-                            style: TextStyle(
-                                fontSize: 22, fontWeight: FontWeight.normal),
+                          const SizedBox(height: 35),
+                          Container(
+                            padding: const EdgeInsets.all(3),
+                            child: const Text(
+                              '➤  SILVER SPONSORS',
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 20,
+                                color: Color.fromARGB(255, 39, 38, 38),
+                              ),
+                            ),
                           ),
-                          const SizedBox(height: 10),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-                              Image.asset('assets/sp2.png',
-                                  width: 100, height: 100),
-                              Image.asset('assets/sp4.png',
-                                  width: 100, height: 100),
-                              Image.asset('assets/sp5.png',
-                                  width: 100, height: 100),
-                            ],
+                          const SizedBox(height: 20),
+                          CarouselSlider(
+                            options: CarouselOptions(
+                              enlargeCenterPage: true,
+                              autoPlay: true,
+                              autoPlayInterval: const Duration(seconds: 3),
+                              autoPlayAnimationDuration:
+                                  const Duration(milliseconds: 800),
+                              enableInfiniteScroll: true,
+                              viewportFraction: 0.6,
+                              aspectRatio: 16 / 7,
+                              scrollDirection: Axis.horizontal,
+                            ),
+                            items: [
+                              'assets/silver1.png',
+                              'assets/silver2.png',
+                              'assets/silver3.png',
+                              'assets/silver4.png',
+                            ].map((item) {
+                              return Builder(
+                                builder: (BuildContext context) {
+                                  return Container(
+                                    width: MediaQuery.of(context).size.width,
+                                    margin: const EdgeInsets.symmetric(
+                                        horizontal: 5.0),
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(8.0),
+                                      image: DecorationImage(
+                                        image: AssetImage(item),
+                                        fit: BoxFit.cover,
+                                      ),
+                                    ),
+                                  );
+                                },
+                              );
+                            }).toList(),
                           ),
-                          const SizedBox(height: 10),
-                          const Text(
-                            'Gold Sponsors',
-                            style: TextStyle(
-                                fontSize: 22, fontWeight: FontWeight.normal),
+                          const SizedBox(height: 35),
+                          Container(
+                            padding: const EdgeInsets.all(3),
+                            child: const Text(
+                              '➤  PLATINUM SPONSORS',
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 20,
+                                color: Color.fromARGB(255, 39, 38, 38),
+                              ),
+                            ),
                           ),
-                          const SizedBox(height: 10),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-                              Image.asset('assets/sp2.png',
-                                  width: 100, height: 100),
-                              Image.asset('assets/sp4.png',
-                                  width: 100, height: 100),
-                              Image.asset('assets/sp5.png',
-                                  width: 100, height: 100),
-                            ],
+                          const SizedBox(height: 20),
+                          CarouselSlider(
+                            options: CarouselOptions(
+                              enlargeCenterPage: true,
+                              autoPlay: true,
+                              autoPlayInterval: const Duration(seconds: 3),
+                              autoPlayAnimationDuration:
+                                  const Duration(milliseconds: 800),
+                              enableInfiniteScroll: true,
+                              viewportFraction: 0.6,
+                              aspectRatio: 16 / 7,
+                              scrollDirection: Axis.horizontal,
+                            ),
+                            items: [
+                              'assets/platinum1.png',
+                              'assets/platinum2.png',
+                              'assets/platinum3.png',
+                              'assets/platinum4.png',
+                            ].map((item) {
+                              return Builder(
+                                builder: (BuildContext context) {
+                                  return Container(
+                                    width: MediaQuery.of(context).size.width,
+                                    margin: const EdgeInsets.symmetric(
+                                        horizontal: 5.0),
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(8.0),
+                                      image: DecorationImage(
+                                        image: AssetImage(item),
+                                        fit: BoxFit.cover,
+                                      ),
+                                    ),
+                                  );
+                                },
+                              );
+                            }).toList(),
+                          ),
+                          const SizedBox(height: 35),
+                          Container(
+                            padding: const EdgeInsets.all(3),
+                            child: const Text(
+                              '➤  B2B SPONSORS',
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 20,
+                                color: Color.fromARGB(255, 39, 38, 38),
+                              ),
+                            ),
+                          ),
+                          const SizedBox(height: 20),
+                          CarouselSlider(
+                            options: CarouselOptions(
+                              enlargeCenterPage: true,
+                              autoPlay: true,
+                              autoPlayInterval: const Duration(seconds: 3),
+                              autoPlayAnimationDuration:
+                                  const Duration(milliseconds: 800),
+                              enableInfiniteScroll: true,
+                              viewportFraction: 0.6,
+                              aspectRatio: 16 / 7,
+                              scrollDirection: Axis.horizontal,
+                            ),
+                            items: [
+                              'assets/silver1.png',
+                              'assets/silver2.png',
+                              'assets/silver3.png',
+                              'assets/silver4.png',
+                            ].map((item) {
+                              return Builder(
+                                builder: (BuildContext context) {
+                                  return Container(
+                                    width: MediaQuery.of(context).size.width,
+                                    margin: const EdgeInsets.symmetric(
+                                        horizontal: 5.0),
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(8.0),
+                                      image: DecorationImage(
+                                        image: AssetImage(item),
+                                        fit: BoxFit.cover,
+                                      ),
+                                    ),
+                                  );
+                                },
+                              );
+                            }).toList(),
                           ),
                         ],
                       ),

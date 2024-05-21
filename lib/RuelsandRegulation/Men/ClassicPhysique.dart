@@ -11,8 +11,13 @@ class _ClassicPhysiqueState extends State<ClassicPhysique> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Classic Physique Judging and Finals'),
-        backgroundColor: const Color.fromARGB(255, 255, 197, 22),
+        title: const Text('Classic Physique',
+        style: TextStyle(
+          fontWeight: FontWeight.bold,
+        ),
+        ),
+                centerTitle: true,
+        backgroundColor: Colors.white10,
         leading: IconButton(
           icon: const Icon(Icons.arrow_back),
           onPressed: () {
