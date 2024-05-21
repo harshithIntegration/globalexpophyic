@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:globalphysiqueexpo/Dashboard.dart';
@@ -9,12 +8,14 @@ class ContactPage extends StatefulWidget {
   _ContactPageState createState() => _ContactPageState();
 }
 
-class _ContactPageState extends State<ContactPage> with TickerProviderStateMixin {
+class _ContactPageState extends State<ContactPage>
+    with TickerProviderStateMixin {
   final _formKey = GlobalKey<FormState>();
   late AnimationController _controller;
   late GoogleMapController _mapController;
 
-  static const LatLng _officeLocation = LatLng(13.0983657, 77.5378028); // Coordinates for your office location
+  static const LatLng _officeLocation =
+      LatLng(13.0983657, 77.5378028); // Coordinates for your office location
 
   @override
   void initState() {
@@ -51,9 +52,9 @@ class _ContactPageState extends State<ContactPage> with TickerProviderStateMixin
           color: Colors.black,
           onPressed: () {
             Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(builder: (context) => const Dashboard()),
-                );
+              context,
+              MaterialPageRoute(builder: (context) => const Dashboard()),
+            );
           },
         ),
       ),
@@ -67,20 +68,20 @@ class _ContactPageState extends State<ContactPage> with TickerProviderStateMixin
         ),
         child: SingleChildScrollView(
           child: Padding(
-           
-             padding: EdgeInsets.all(10.0),
+            padding: EdgeInsets.all(10.0),
             child: Column(
-              
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 AspectRatio(
-                aspectRatio: 16 / 10,
-                child: Image.asset(
-                  'assets/body2.jpg', // Replace with your image path
-                  fit: BoxFit.cover,
+                  aspectRatio: 16 / 10,
+                  child: Image.asset(
+                    'assets/body2.jpg', // Replace with your image path
+                    fit: BoxFit.cover,
+                  ),
                 ),
-              ),
-              SizedBox(height: 15,),
+                SizedBox(
+                  height: 15,
+                ),
                 const Center(
                   child: Text(
                     '➤  Contact Information :',
@@ -106,7 +107,8 @@ class _ContactPageState extends State<ContactPage> with TickerProviderStateMixin
                         buildContactCard(
                           icon: Icons.location_on,
                           title: 'Address',
-                          content: '#49 Ravish Gardenia Layout\nVaderahalli, Bengaluru, Karnataka 560097',
+                          content:
+                              '#49 Ravish Gardenia Layout\nVaderahalli, Bengaluru, Karnataka 560097',
                         ),
                         SizedBox(height: 20),
                         buildContactCard(
@@ -256,6 +258,23 @@ class _ContactPageState extends State<ContactPage> with TickerProviderStateMixin
                 ),
                 SizedBox(height: 40),
                 buildFooter(),
+                Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: Column(
+                    children: [
+                      Image.asset(
+                        'assets/logo.png', // Path to your footer image
+                        width: 100,
+                        height: 100,
+                      ),
+                      const SizedBox(height: 8),
+                      const Text(
+                        '© Copyright 2024 All Rights Reserved by Planotech Groups',
+                        style: TextStyle(fontSize: 13),
+                      ),
+                    ],
+                  ),
+                ),
               ],
             ),
           ),
@@ -264,7 +283,10 @@ class _ContactPageState extends State<ContactPage> with TickerProviderStateMixin
     );
   }
 
-  Widget buildContactCard({required IconData icon, required String title, required String content}) {
+  Widget buildContactCard(
+      {required IconData icon,
+      required String title,
+      required String content}) {
     return Card(
       elevation: 4,
       shape: RoundedRectangleBorder(
@@ -309,109 +331,101 @@ class _ContactPageState extends State<ContactPage> with TickerProviderStateMixin
   }
 
   Widget buildFooter() {
-    
     return Container(
-      
       color: Colors.blue[50],
       padding: EdgeInsets.all(10.0),
-      
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        
         children: [
-                        Center(
-                          child: Image.asset(
-                                          'assets/logo.png', // Replace with your image path
-                                          width: 200, // Set the width of the image
-                                          height: 200, // Set the height of the image
-                                        ),
-                        ),
-
-       const   Row(
+          Center(
+            child: Image.asset(
+              'assets/logo.png', // Replace with your image path
+              width: 200, // Set the width of the image
+              height: 200, // Set the height of the image
+            ),
+          ),
+          const Row(
             children: [
-               SizedBox(width: 16), // Space between image and text
-               Expanded(
+              SizedBox(width: 16), // Space between image and text
+              Expanded(
                 child: Text(
-'Join the Global Physique Expo for thrilling competitions, expert workshops, new product reveals, and celebrity guests. Fitness excitement awaits!',
+                  'Join the Global Physique Expo for thrilling competitions, expert workshops, new product reveals, and celebrity guests. Fitness excitement awaits!',
                   style: TextStyle(fontSize: 16),
                 ),
               ),
             ],
-          ),      
-
-      
-            const    SizedBox(height: 20),
-const Text(
-  '➣  Instagram Gallery',
-  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-),
-const SizedBox(height: 10),
-GridView.builder(
-  shrinkWrap: true,
-  physics: const NeverScrollableScrollPhysics(),
-  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-    crossAxisCount: 3,
-    crossAxisSpacing: 10,
-    mainAxisSpacing: 10,
-  ),
-  itemCount: 6, // Number of images in the gallery
-  itemBuilder: (context, index) {
-    return ClipRRect(
-      borderRadius: BorderRadius.circular(12), // Adjust the radius to change the curve
-      child: Image.asset(
-        'assets/b${index + 1}.gif',
-        fit: BoxFit.cover,
-      ),
-    );
-  },
-),
-                    
-         const SizedBox(height: 30),
-       const  Text(
+          ),
+          const SizedBox(height: 20),
+          const Text(
+            '➣  Instagram Gallery',
+            style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+          ),
+          const SizedBox(height: 10),
+          GridView.builder(
+            shrinkWrap: true,
+            physics: const NeverScrollableScrollPhysics(),
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 3,
+              crossAxisSpacing: 10,
+              mainAxisSpacing: 10,
+            ),
+            itemCount: 6, // Number of images in the gallery
+            itemBuilder: (context, index) {
+              return ClipRRect(
+                borderRadius: BorderRadius.circular(
+                    12), // Adjust the radius to change the curve
+                child: Image.asset(
+                  'assets/b${index + 1}.gif',
+                  fit: BoxFit.cover,
+                ),
+              );
+            },
+          ),
+          const SizedBox(height: 30),
+          const Text(
             ' Contact Us',
             style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
           ),
-       const   SizedBox(height: 15),
-      const  Row(
-                children: [
-                  Icon(Icons.access_time_filled, size: 15),
-                  SizedBox(width: 8),
-                  Text('Mon – Fri : 09:30 – 18:30'),
-                ],
+          const SizedBox(height: 15),
+          const Row(
+            children: [
+              Icon(Icons.access_time_filled, size: 15),
+              SizedBox(width: 8),
+              Text('Mon – Fri : 09:30 – 18:30'),
+            ],
+          ),
+          const SizedBox(height: 8),
+          const Row(
+            children: [
+              Icon(Icons.phone_in_talk_outlined, size: 15),
+              SizedBox(width: 8),
+              Text('+91 9606445493'),
+            ],
+          ),
+          const SizedBox(height: 8),
+          const Row(
+            children: [
+              Icon(Icons.email, size: 15),
+              SizedBox(width: 8),
+              Text('info@globalphysiqueexpo.com'),
+            ],
+          ),
+          const SizedBox(height: 8),
+          const Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Icon(Icons.language_rounded, size: 16),
+              SizedBox(width: 8),
+              Expanded(
+                child: Text(
+                    '#49 Ravish Gardenia Layout Vaderahalli, Bengaluru, Karnataka 560097'),
               ),
-                       const     SizedBox(height: 8),
-
-       const  Row(
-                children: [
-                  Icon(Icons.phone_in_talk_outlined, size: 15),
-                  SizedBox(width: 8),
-                  Text('+91 9606445493'),
-                ],
-              ),
-          const    SizedBox(height: 8),
-           const   Row(
-                children: [
-                  Icon(Icons.email,size: 15),
-                  SizedBox(width: 8),
-                  Text('info@globalphysiqueexpo.com'),
-                ],
-              ),
-          const    SizedBox(height: 8),
-           const   Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Icon(Icons.language_rounded,size: 16),
-                  SizedBox(width: 8),
-                  Expanded(
-                    child: Text('#49 Ravish Gardenia Layout Vaderahalli, Bengaluru, Karnataka 560097'),
-                  ),
-                ],
-              ),        
+            ],
+          ),
         ],
       ),
     );
   }
-
 }
 
 class CustomTextField extends StatelessWidget {

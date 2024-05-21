@@ -1,535 +1,3 @@
-// import 'package:carousel_slider/carousel_slider.dart';
-// import 'package:flutter/material.dart';
-// import 'package:globalphysiqueexpo/Dashboard.dart';
-
-// class AboutUsPage extends StatelessWidget {
-//   const AboutUsPage({Key? key});
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       appBar: AppBar(
-//         title: const Text(
-//           'About Us',
-//           style: TextStyle(
-//             color: Colors.white,
-//             fontWeight: FontWeight.bold,
-//           ),
-//         ),
-//         centerTitle: true,
-//         backgroundColor: const Color.fromARGB(255, 255, 197, 22),
-//         leading: IconButton(
-//           icon: const Icon(Icons.arrow_back),
-//           color: Colors.white,
-//           onPressed: () {
-//             Navigator.pushReplacement(
-//               context,
-//               MaterialPageRoute(builder: (context) => const Dashboard()),
-//             );
-//           },
-//         ),
-//       ),
-//       body: SingleChildScrollView(
-//         child: Container(
-//           decoration: const BoxDecoration(
-//             color: Color.fromARGB(255, 255, 255, 255),
-//           ),
-//         child: Padding(
-//           padding: const EdgeInsets.all(20.0),
-//           child: Column(
-//             crossAxisAlignment: CrossAxisAlignment.start,
-//             children: [
-//               Center(
-//                 child: Container(
-//                   padding: const EdgeInsets.all(
-//                       3), // Optional: Adjust padding as needed
-//                   child: const Text(
-//                     'WELCOME TO UIBFF',
-//                     textAlign: TextAlign.center,
-//                     style: TextStyle(
-//                       fontWeight: FontWeight.bold,
-//                       fontSize: 25,
-//                       color: Color.fromARGB(255, 39, 38, 38),
-//                     ),
-//                   ),
-//                 ),
-//               ),
-//                const SizedBox(height: 5),
-//               AspectRatio(
-//                 aspectRatio: 16 / 9,
-//                 child: Image.asset(
-//                   'assets/first_page.jpg', // Replace with your image path
-//                   fit: BoxFit.cover,
-//                 ),
-//               ),
-//               const SizedBox(height: 10),
-//               const Padding(
-//                 padding: EdgeInsets.symmetric(vertical: 10),
-//                 child: Text(
-//                   'At the Global Physique Expo, we celebrate the dedication, discipline, and determination of individuals who strive to sculpt their bodies into works of art.',
-//                   style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.w500,color: Color.fromARGB(255, 39, 38, 38)),
-//                   textAlign: TextAlign.center,
-//                 ),
-//               ),
-//               const SizedBox(height: 20),
-//               Container(
-//                 padding: const EdgeInsets.symmetric(vertical: 20),
-//                 decoration: BoxDecoration(
-//                   borderRadius: BorderRadius.circular(10),
-//                   color: Colors.grey[200],
-//                   boxShadow: [
-//                     BoxShadow(
-//                       color: const Color.fromARGB(255, 219, 215, 215)
-//                           .withOpacity(0.5),
-//                       spreadRadius: 2,
-//                       blurRadius: 4,
-//                       offset: const Offset(0, 3),
-//                     ),
-//                   ],
-//                 ),
-//                 child: Row(
-//                   crossAxisAlignment: CrossAxisAlignment.start,
-//                   children: [
-//                     Flexible(
-//                       flex: 2,
-//                       child: Padding(
-//                         padding: const EdgeInsets.all(8.0),
-//                         child: ClipRRect(
-//                           borderRadius: BorderRadius.circular(10),
-//                           child: Image.asset(
-//                             'assets/andre.jpg',
-//                             fit: BoxFit.cover,
-//                             width: 220,
-//                             height: 220,
-//                           ),
-//                         ),
-//                       ),
-//                     ),
-//                     const Expanded(
-//                       flex: 3,
-//                       child: Padding(
-//                         padding:
-//                             EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-//                         child: Column(
-//                           crossAxisAlignment: CrossAxisAlignment.start,
-//                           children: [
-//                             Text(
-//                               'ANDRE’ BOTHA',
-//                               style: TextStyle(
-//                                 fontSize: 18.0,
-//                                 fontWeight: FontWeight.bold,
-//                               ),
-//                             ),
-//                             SizedBox(height: 10),
-//                             Text(
-//                               'Andre’ Botha is proud to be the founder and president of UIBFF. I have not been happy with the way I see bodybuilding and other strength sports is heading and decided to start UIBFF',
-//                               style: TextStyle(
-//                                 fontSize: 16.0,
-//                               ),
-//                             ),
-//                           ],
-//                         ),
-//                       ),
-//                     ),
-//                   ],
-//                 ),
-//               ),
-//               const SizedBox(height: 20),
-//               Row(
-//                 children: [
-//                   Expanded(
-//                     child: Column(
-//                       children: [
-//                         Image.asset(
-//                           'assets/Jagjit.jpg',
-//                           width: 180,
-//                           height: 180,
-//                           fit: BoxFit.cover,
-//                         ),
-//                         const SizedBox(height: 5),
-//                         const Text(
-//                           'JAGJIT SINGH',
-//                           style: TextStyle(
-//                             fontSize: 14,
-//                             fontWeight: FontWeight.bold,
-//                             color: Color.fromARGB(255, 39, 38, 38),
-//                           ),
-//                         ),
-//                         const Text(
-//                           'UIBFF PRESIDENT',
-//                           style: TextStyle(
-//                             fontSize: 9,
-//                             fontWeight: FontWeight.w500,
-//                             color: Color.fromARGB(255, 39, 38, 38),
-//                           ),
-//                         ),
-//                       ],
-//                     ),
-//                   ),
-//                   const SizedBox(width: 10),
-//                   Expanded(
-//                     child: Column(
-//                       children: [
-//                         Image.asset(
-//                           'assets/varun.jpg',
-//                           width: 180,
-//                           height: 180,
-//                           fit: BoxFit.cover,
-//                         ),
-//                         const SizedBox(height: 5),
-//                         const Text(
-//                           'Varun Varma',
-//                           style: TextStyle(
-//                             fontSize: 14,
-//                             fontWeight: FontWeight.bold,
-//                             color: Color.fromARGB(255, 39, 38, 38),
-//                           ),
-//                         ),
-//                         const Text(
-//                           'VICE PRESIDENT (Event Promoter)',
-//                           style: TextStyle(
-//                             fontSize: 9,
-//                             fontWeight: FontWeight.w500,
-//                             color: Color.fromARGB(255, 39, 38, 38),
-//                           ),
-//                         ),
-//                       ],
-//                     ),
-//                   ),
-//                 ],
-//               ),
-//               const SizedBox(height: 20),
-//               Center(
-//                 child: Container(
-//                   padding: const EdgeInsets.all(3),
-//                   child: const Text(
-//                     'EVENTS',
-//                     textAlign: TextAlign.center,
-//                     style: TextStyle(
-//                       fontWeight: FontWeight.bold,
-//                       fontSize: 25,
-//                       color: Color.fromARGB(255, 39, 38, 38),
-//                     ),
-//                   ),
-//                 ),
-//               ),
-//               const SizedBox(height: 20),
-//               Row(
-//                 children: [
-//                   Expanded(
-//                     child: Column(
-//                       children: [
-//                         Image.asset(
-//                           'assets/one.jpg',
-//                           width: 100,
-//                           height: 100,
-//                           fit: BoxFit.cover,
-//                         ),
-//                       ],
-//                     ),
-//                   ),
-//                   const SizedBox(width: 10),
-//                   Expanded(
-//                     child: Column(
-//                       children: [
-//                         Image.asset(
-//                           'assets/two.jpg',
-//                           width: 100,
-//                           height: 100,
-//                           fit: BoxFit.cover,
-//                         ),
-//                       ],
-//                     ),
-//                   ),
-//                   const SizedBox(width: 10),
-//                   Expanded(
-//                     child: Column(
-//                       children: [
-//                         Image.asset(
-//                           'assets/three.jpg',
-//                           width: 100,
-//                           height: 100,
-//                           fit: BoxFit.cover,
-//                         ),
-//                       ],
-//                     ),
-//                   ),
-//                   const SizedBox(width: 10),
-//                   Expanded(
-//                     child: Column(
-//                       children: [
-//                         Image.asset(
-//                           'assets/four.jpg',
-//                           width: 100,
-//                           height: 100,
-//                           fit: BoxFit.cover,
-//                         ),
-//                       ],
-//                     ),
-//                   ),
-//                 ],
-//               ),
-//               const SizedBox(height: 10),
-//               Center(
-//                 child: Container(
-//                   padding: const EdgeInsets.all(3),
-//                   child: const Text(
-//                     'UIBFF INDIA',
-//                     textAlign: TextAlign.center,
-//                     style: TextStyle(
-//                       fontWeight: FontWeight.bold,
-//                       fontSize: 25,
-//                       color: Color.fromARGB(255, 39, 38, 38),
-//                     ),
-//                   ),
-//                 ),
-//               ),
-//               const SizedBox(height: 20),
-//               Row(
-//                 children: [
-//                   Expanded(
-//                     child: Column(
-//                       children: [
-//                         Image.asset(
-//                           'assets/first.jpg',
-//                           width: 180,
-//                           height: 180,
-//                           fit: BoxFit.cover,
-//                         ),
-//                         const SizedBox(height: 5),
-//                         const Text(
-//                           'NITESHCHHIBBER',
-//                           style: TextStyle(
-//                             fontSize: 14,
-//                             fontWeight: FontWeight.bold,
-//                             color: Color.fromARGB(255, 39, 38, 38),
-//                           ),
-//                         ),
-//                         const Text(
-//                           'PRESIDENT(UIBFF INDIA)',
-//                           style: TextStyle(
-//                             fontSize: 9,
-//                             fontWeight: FontWeight.w500,
-//                             color: Color.fromARGB(255, 39, 38, 38),
-//                           ),
-//                         ),
-//                       ],
-//                     ),
-//                   ),
-//                   const SizedBox(width: 10),
-//                   Expanded(
-//                     child: Column(
-//                       children: [
-//                         Image.asset(
-//                           'assets/second.jpeg',
-//                           width: 180,
-//                           height: 180,
-//                           fit: BoxFit.cover,
-//                         ),
-//                         const SizedBox(height: 5),
-//                         const Text(
-//                           'SIDDHU YADAV',
-//                           style: TextStyle(
-//                             fontSize: 14,
-//                             fontWeight: FontWeight.bold,
-//                             color: Color.fromARGB(255, 39, 38, 38),
-//                           ),
-//                         ),
-//                         const Text(
-//                           'PRESIDENT(UIBFF KARNATAKA)',
-//                           style: TextStyle(
-//                             fontSize: 9,
-//                             fontWeight: FontWeight.w500,
-//                             color: Color.fromARGB(255, 39, 38, 38),
-//                           ),
-//                         ),
-//                       ],
-//                     ),
-//                   ),
-//                 ],
-//               ),
-//               const SizedBox(height: 20),
-//               Row(
-//                 children: [
-//                   Expanded(
-//                     child: Column(
-//                       children: [
-//                         Image.asset(
-//                           'assets/third.jpeg',
-//                           width: 180,
-//                           height: 180,
-//                           fit: BoxFit.cover,
-//                         ),
-//                         const SizedBox(height: 5),
-//                         const Text(
-//                           'HIMADRI ADHIKARI',
-//                           style: TextStyle(
-//                             fontSize: 14,
-//                             fontWeight: FontWeight.bold,
-//                             color: Color.fromARGB(255, 39, 38, 38),
-//                           ),
-//                         ),
-//                         const Text(
-//                           'VICE PRESIDENT(UIBFF KARNATAKA)',
-//                           style: TextStyle(
-//                             fontSize: 8,
-//                             fontWeight: FontWeight.w500,
-//                             color: Color.fromARGB(255, 39, 38, 38),
-//                           ),
-//                         ),
-//                       ],
-//                     ),
-//                   ),
-//                   const SizedBox(width: 10),
-//                   Expanded(
-//                     child: Column(
-//                       children: [
-//                         Image.asset(
-//                           'assets/fourth.jpeg',
-//                           width: 180,
-//                           height: 180,
-//                           fit: BoxFit.cover,
-//                         ),
-//                         const SizedBox(height: 5),
-//                         const Text(
-//                           'HARISH GOWDA',
-//                           style: TextStyle(
-//                             fontSize: 14,
-//                             fontWeight: FontWeight.bold,
-//                             color: Color.fromARGB(255, 39, 38, 38),
-//                           ),
-//                         ),
-//                         const Text(
-//                           'SECRETARY (UIBFF KARNATAKA)',
-//                           style: TextStyle(
-//                             fontSize: 9,
-//                             fontWeight: FontWeight.w500,
-//                             color: Color.fromARGB(255, 39, 38, 38),
-//                           ),
-//                         ),
-//                       ],
-//                     ),
-//                   ),
-//                 ],
-//               ),
-//               const SizedBox(height: 5),
-//               Center(
-//                 child: Container(
-//                   padding: const EdgeInsets.all(3),
-//                   child: const Text(
-//                     'SPONSORS',
-//                     textAlign: TextAlign.center,
-//                     style: TextStyle(
-//                       fontWeight: FontWeight.bold,
-//                       fontSize: 20,
-//                       color: Color.fromARGB(255, 39, 38, 38),
-//                     ),
-//                   ),
-//                 ),
-//               ),
-//               const SizedBox(height: 10),
-//               CarouselSlider(
-//                 options: CarouselOptions(
-//                   enlargeCenterPage: true,
-//                   autoPlay: true,
-//                   autoPlayInterval: const Duration(seconds: 3),
-//                   autoPlayAnimationDuration: const Duration(milliseconds: 800),
-//                   enableInfiniteScroll: true,
-//                   viewportFraction: 0.8,
-//                   aspectRatio: 16 / 9,
-//                   scrollDirection: Axis.horizontal,
-//                 ),
-//                 items: [
-//                   'assets/new.png',
-//                   'assets/sp2.png',
-//                   'assets/sp4.png',
-//                   'assets/sp5.png',
-//                   'assets/sp7.png',
-//                   'assets/new1.png',
-//                   'assets/sp9.png',
-//                 ].map((item) {
-//                   return Builder(
-//                     builder: (BuildContext context) {
-//                       return Container(
-//                         width: MediaQuery.of(context).size.width,
-//                         margin: const EdgeInsets.symmetric(horizontal: 5.0),
-//                         decoration: BoxDecoration(
-//                           borderRadius: BorderRadius.circular(8.0),
-//                           image: DecorationImage(
-//                             image: AssetImage(item),
-//                             fit: BoxFit.cover,
-//                           ),
-//                         ),
-//                       );
-//                     },
-//                   );
-//                 }).toList(),
-//               ),
-//               const SizedBox(height: 5),
-//               Center(
-//                 child: Container(
-//                   padding: const EdgeInsets.all(3),
-//                   child: const Text(
-//                     'SOCIAL MEDIA PARTNER',
-//                     textAlign: TextAlign.center,
-//                     style: TextStyle(
-//                       fontWeight: FontWeight.bold,
-//                       fontSize: 20,
-//                       color: Color.fromARGB(255, 39, 38, 38),
-//                     ),
-//                   ),
-//                 ),
-//               ),
-//               const SizedBox(height: 10),
-//               CarouselSlider(
-//                 options: CarouselOptions(
-//                   enlargeCenterPage: true,
-//                   autoPlay: true,
-//                   autoPlayInterval: const Duration(seconds: 3),
-//                   autoPlayAnimationDuration: const Duration(milliseconds: 800),
-//                   enableInfiniteScroll: true,
-//                   viewportFraction: 0.8,
-//                   aspectRatio: 16 / 9,
-//                   scrollDirection: Axis.horizontal,
-//                 ),
-//                 items: [
-//                   'assets/m1.png',
-//                   'assets/m2.png',
-//                   'assets/m3.png',
-//                   'assets/m4.jpg',
-//                   'assets/m5.jpg',
-//                   'assets/m6.png',
-//                   'assets/m7.jpg',
-//                   'assets/m8.png',
-//                   'assets/m9.jpg',
-//                   'assets/m10.png',
-//                 ].map((item) {
-//                   return Builder(
-//                     builder: (BuildContext context) {
-//                       return Container(
-//                         width: MediaQuery.of(context).size.width,
-//                         margin: const EdgeInsets.symmetric(horizontal: 5.0),
-//                         decoration: BoxDecoration(
-//                           borderRadius: BorderRadius.circular(8.0),
-//                           image: DecorationImage(
-//                             image: AssetImage(item),
-//                             fit: BoxFit.cover,
-//                           ),
-//                         ),
-//                       );
-//                     },
-//                   );
-//                 }).toList(),
-//               ),
-//             ],
-//           ),
-//         ),
-//       ),
-//       ),
-//     );
-//   }
-// }
-
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -708,7 +176,7 @@ class AboutUsPage extends StatelessWidget {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
-                                    'Dolor sit amet consectetur elit sed do eiusmod tempor incd idunt labore et dolore magna aliqua enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip exea commodo consequat.',
+                                    'The UIBFF (United Intercontinental Bodybuilding Fitness Federation) Karnataka division is led by President Siddhu Yadav. The federation aims to provide a platform for bodybuilders to showcase their dedication and physique. UIBFF Karnataka emphasizes promoting a culture of health, fitness, and sportsmanship, ensuring fairness and professionalism in all its events​',
                                     style: TextStyle(
                                       fontSize: 16.0,
                                     ),
@@ -726,14 +194,14 @@ class AboutUsPage extends StatelessWidget {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
+                            _buildCard('assets/andre.jpg',
+                              "ANDRE’ BOTHA\nUIBFF GLOBAL PRESIDENT"),
                           _buildCard('assets/himadri.jpeg',
                               "HIMADRI ADHIKARI\nVC.PRESIDENT KARNATKA"),
-                          _buildCard('assets/jagjit.jpg',
-                              "JAGJIT SINGH\nUIBFF PRESIDENT"),
+                          _buildCard('assets/Jagjit.jpg',
+                              "JAGJIT SINGH\nUIBFF PRESIDENT               "),
                           _buildCard('assets/nitesh.jpeg',
                               "NITESH CHHIBBER\nUIBFF PRESIDENT INDIA        "),
-                          _buildCard('assets/andre.jpg',
-                              "ANDRE’ BOTHA\nUIBFF GLOBAL PRESIDENT"),
                         ],
                       ),
                     ),
@@ -835,6 +303,8 @@ class AboutUsPage extends StatelessWidget {
                     'assets/supporting2.jpg',
                     'assets/supporting3.png',
                     'assets/supporting4.jpg',
+                    'assets/supporting5.png',
+                    'assets/supporting6.png',
                   ].map((item) {
                     return Builder(
                       builder: (BuildContext context) {
@@ -1001,6 +471,23 @@ class AboutUsPage extends StatelessWidget {
                   }).toList(),
                 ),
                 buildFooter(),
+                Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Column(
+                children: [
+                  Image.asset(
+                    'assets/logo.png', // Path to your footer image
+                    width: 100,
+                    height: 100,
+                  ),
+                  const SizedBox(height: 8),
+                  const Text(
+                    '© Copyright 2024 All Rights Reserved by Planotech Groups',
+                    style: TextStyle(fontSize: 13),
+                  ),
+                ],
+              ),
+            ),
               ],
             ),
           ),

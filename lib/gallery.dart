@@ -17,7 +17,7 @@ class Gallery extends StatelessWidget {
       'assets/gym5.jpg',
       'assets/gym6.jpg',
       'assets/gym12.jpg',
-      'assets/gym7.jpg',
+      'assets/gym7.jpg', 
       'assets/gym8.jpg',
       'assets/gym9.jpg',
       'assets/gym13.jpg',
@@ -149,6 +149,23 @@ class Gallery extends StatelessWidget {
                 );
               },
             ),
+            Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: Column(
+                    children: [
+                      Image.asset(
+                        'assets/logo.png', // Path to your footer image
+                        width: 100,
+                        height: 100,
+                      ),
+                      const SizedBox(height: 8),
+                      const Text(
+                        '© Copyright 2024 All Rights Reserved by Planotech Groups',
+                        style: TextStyle(fontSize: 13),
+                      ),
+                    ],
+                  ),
+                ),
           ],
         ),
       ),
@@ -166,10 +183,10 @@ class FullScreenImage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: const Color.fromARGB(255, 255, 197, 22),
+        backgroundColor: Colors.white30,
         leading: IconButton(
           icon: const Icon(Icons.arrow_back),
-          color: Colors.white,
+          color: Colors.black,
           onPressed: () {
             Navigator.pushReplacement(
               context,
