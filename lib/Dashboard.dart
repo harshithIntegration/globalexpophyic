@@ -3,9 +3,9 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter_advanced_drawer/flutter_advanced_drawer.dart';
 import 'dart:async';
 import 'package:globalphysiqueexpo/AboutUs.dart';
-import 'package:globalphysiqueexpo/Category/Womens.dart';
-import 'package:globalphysiqueexpo/Category/national.dart';
 import 'package:globalphysiqueexpo/ContactUs.dart';
+import 'package:globalphysiqueexpo/Events/international.dart';
+import 'package:globalphysiqueexpo/Events/national.dart';
 import 'package:globalphysiqueexpo/RuelsandRegulation/Men/ClassicPhysique.dart';
 import 'package:globalphysiqueexpo/RuelsandRegulation/Men/MenPhysique.dart';
 import 'package:globalphysiqueexpo/RuelsandRegulation/Men/MensBodybuilding.dart';
@@ -140,9 +140,8 @@ class _DashboardPageState extends State<DashboardPage>
                 title: Text(
                   'EVENTS',
                   style: TextStyle(
-                    color: selectedItem == 'EVENTS'
-                        ? Colors.black
-                        : Colors.black,
+                    color:
+                        selectedItem == 'EVENTS' ? Colors.black : Colors.black,
                   ),
                 ),
                 leading: const Icon(Icons.category),
@@ -163,7 +162,8 @@ class _DashboardPageState extends State<DashboardPage>
                       });
                       Navigator.pushReplacement(
                         context,
-                        MaterialPageRoute(builder: (context) => const Gallery()),
+                        MaterialPageRoute(
+                            builder: (context) => const Gallery()),
                       );
                     },
                   ),
@@ -183,7 +183,8 @@ class _DashboardPageState extends State<DashboardPage>
                       });
                       Navigator.pushReplacement(
                         context,
-                        MaterialPageRoute(builder: (context) =>  NationalScreen()),
+                        MaterialPageRoute(
+                            builder: (context) => NationalScreen()),
                       );
                     },
                   ),
@@ -203,7 +204,8 @@ class _DashboardPageState extends State<DashboardPage>
                       });
                       Navigator.pushReplacement(
                         context,
-                        MaterialPageRoute(builder: (context) => const Womens()),
+                        MaterialPageRoute(
+                            builder: (context) => International()),
                       );
                     },
                   ),
@@ -233,9 +235,8 @@ class _DashboardPageState extends State<DashboardPage>
                 title: Text(
                   'RULES',
                   style: TextStyle(
-                    color: selectedItem == 'RULES'
-                        ? Colors.black
-                        : Colors.black,
+                    color:
+                        selectedItem == 'RULES' ? Colors.black : Colors.black,
                   ),
                 ),
                 leading: const Icon(Icons.rule),
@@ -399,7 +400,8 @@ class _DashboardPageState extends State<DashboardPage>
                       });
                       Navigator.pushReplacement(
                         context,
-                        MaterialPageRoute(builder: (context) => WomensFitness()),
+                        MaterialPageRoute(
+                            builder: (context) => WomensFitness()),
                       );
                     },
                   ),
@@ -419,7 +421,8 @@ class _DashboardPageState extends State<DashboardPage>
                       });
                       Navigator.pushReplacement(
                         context,
-                        MaterialPageRoute(builder: (context) => WomensPhysique()),
+                        MaterialPageRoute(
+                            builder: (context) => WomensPhysique()),
                       );
                     },
                   ),
@@ -496,6 +499,17 @@ class _DashboardPageState extends State<DashboardPage>
               SingleChildScrollView(
                 child: Column(
                   children: [
+                    
+                    Stack(
+                      children: [
+                        Image.asset(
+                          'assets/final.jpg', // Path to your header image
+                          width: double.infinity,
+                          height: 250,
+                          fit: BoxFit.fill,
+                        ),
+                      ],
+                    ),
                     // Countdown timer in rounded square blocks
                     Padding(
                       padding: const EdgeInsets.all(16.0),
@@ -554,7 +568,7 @@ class _DashboardPageState extends State<DashboardPage>
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
                           image: const DecorationImage(
-                            image: AssetImage('assets/1.jpg'),
+                            image: AssetImage('assets/body_logo.png'),
                             fit: BoxFit.cover,
                           ),
                           border: Border.all(
@@ -567,7 +581,7 @@ class _DashboardPageState extends State<DashboardPage>
                     const Padding(
                       padding: EdgeInsets.all(16.0),
                       child: Text(
-                        'WELCOME TO UIBFF',
+                        'WELCOME TO GLOBAL PHYSIQUE EXPO',
                         style: TextStyle(
                             fontSize: 18, fontWeight: FontWeight.bold),
                         textAlign: TextAlign.center,
@@ -835,6 +849,23 @@ class _DashboardPageState extends State<DashboardPage>
                                 },
                               );
                             }).toList(),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(16.0),
+                      child: Column(
+                        children: [
+                          Image.asset(
+                            'assets/logo.png', // Path to your footer image
+                            width: 100,
+                            height: 100,
+                          ),
+                          const SizedBox(height: 8),
+                          const Text(
+                            '© Copyright 2024 All Rights Reserved by Planotech Groups',
+                            style: TextStyle(fontSize: 14),
                           ),
                         ],
                       ),
